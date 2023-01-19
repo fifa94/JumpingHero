@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shield.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/shield.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/SwArchitectureJumpingHero.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/SwArchitectureJumpingHero.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/sramekf/PycharmProjects/JumpingHero/MainProgram.py"
+    "last_opened_file_path": "C:/Users/sramekf/PycharmProjects/JumpingHero/MainProgram.py",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RecentsManager">
