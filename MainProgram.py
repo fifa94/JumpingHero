@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption(name)
 
 # Load window icon
-icon = pygame.image.load('shield.png')
+icon = pygame.image.load('Pictures/shield.png')
 pygame.display.set_icon(icon)
 
 # Main game cycle
