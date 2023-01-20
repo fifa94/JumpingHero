@@ -1,4 +1,5 @@
 import pygame
+import Characters
 
 # Initialization of pygame
 pygame.init()
@@ -17,15 +18,36 @@ pygame.display.set_caption(name)
 icon = pygame.image.load('Pictures/shield.png')
 pygame.display.set_icon(icon)
 
+# Pygame clock - FPS
+clock = pygame.time.Clock()
+FPS = 30
+
 # Main game cycle
 running = True
-
+fig = Characters.CommonCharacter('aaa', 100, 100, screen)
 while running:
     for event in pygame.event.get():
         print(event)
         # close window
         if event.type == pygame.QUIT:
             running = False
+
+
+    # draw character
+    pressed = pygame.key.get_pressed()
+    if pressed[pygame.K_UP]:
+        fig.jump()
+    elif pressed[pygame.K_LEFT]:
+        fig.move_left()
+        print(fig.pos_x)
+    elif pressed[pygame.K_RIGHT]:
+        fig.move_right()
+        print(fig.pos_x)
+
+
+    pygame.display.flip()
+    clock.tick(FPS)
+
 
 # Close of pygame window
 pygame.quit()
