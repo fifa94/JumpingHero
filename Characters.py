@@ -10,7 +10,7 @@ class CommonCharacter:
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.screen = screen
-        self.player = pygame.Rect(self.pos_x, self.pos_y, 50, 50)
+        self.player = pygame.image.load('Pictures/rocket.png')
         self.draw()
 
     def __str__(self):
@@ -23,19 +23,28 @@ class CommonCharacter:
         return output_text
 
     def draw(self):
-        pygame.draw.rect(self.screen, (0, 0, 255), self.player)
-
+        self.screen.blit(self.player, (self.pos_x, self.pos_y))
 
 
     def move_right(self):
       print('move right')
-      self.player.move_ip(5, 0)
+      self.pos_x += 5
       self.draw()
 
 
     def move_left(self):
       print('move left')
-      self.player.move_ip(-5, 0)
+      self.pos_x -= 5
+      self.draw()
+
+    def move_up(self):
+      print('move up')
+      self.pos_y -= 5
+      self.draw()
+
+    def move_down(self):
+      print('move down')
+      self.pos_y += 5
       self.draw()
 
 

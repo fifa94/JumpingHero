@@ -10,6 +10,7 @@ name = 'Jumping Hero'
 
 # Create window
 screen = pygame.display.set_mode((width, height))
+surf = pygame.Surface((width, height))
 
 # Set window caption
 pygame.display.set_caption(name)
@@ -21,11 +22,14 @@ pygame.display.set_icon(icon)
 # Pygame clock - FPS
 clock = pygame.time.Clock()
 FPS = 30
-
+x = 30
+y = 30
 # Main game cycle
 running = True
 fig = Characters.CommonCharacter('aaa', 100, 100, screen)
+rocketImg = pygame.image.load('Pictures/rocket.png')
 while running:
+
     for event in pygame.event.get():
         print(event)
         # close window
@@ -36,7 +40,12 @@ while running:
     # draw character
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_UP]:
-        fig.jump()
+        # pass
+        fig.move_up()
+        print(fig.pos_y)
+    elif pressed[pygame.K_DOWN]:
+        fig.move_down()
+        print(fig.pos_y)
     elif pressed[pygame.K_LEFT]:
         fig.move_left()
         print(fig.pos_x)
@@ -44,6 +53,8 @@ while running:
         fig.move_right()
         print(fig.pos_x)
 
+    screen.fill((0, 0, 0))
+    fig.draw()
 
     pygame.display.flip()
     clock.tick(FPS)
