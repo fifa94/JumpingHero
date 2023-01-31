@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ButtonGeneral.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/Button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_Button.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_Button.py" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -36,7 +44,12 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+
     &quot;last_opened_file_path&quot;: &quot;C:/GitHub/JumpingHero&quot;
+
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sramekf/PycharmProjects/JumpingHero/MainProgram.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+
   }
 }</component>
   <component name="RecentsManager">
