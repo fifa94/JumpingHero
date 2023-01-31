@@ -1,5 +1,5 @@
 import unittest
-import Button
+import ButtonGeneral
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
