@@ -29,7 +29,7 @@ y = 30
 fig = Characters.CommonCharacter('aaa', 100, 100, screen)
 rocketImg = pygame.image.load('Pictures/rocket.png')
 
-again_btn = ButtonGeneral.Button(75, 200, 'Second menu')
+play_btn = ButtonGeneral.Button(75, 200, 'Play')
 quit_btn = ButtonGeneral.Button(75, 300, 'Quit')
 second_btn = ButtonGeneral.Button(75, 200, 'Main menu')
 
@@ -46,13 +46,13 @@ while running:
 
         screen.fill((123, 13, 123))
 
-        if again_btn.draw_button(screen):
-            menu_state = 'SecondMenu'
+        if play_btn.draw_button(screen):
+            menu_state = 'Game'
 
         if quit_btn.draw_button(screen):
             running = False
 
-    if menu_state == 'SecondMenu':
+    if menu_state == 'Game':
 
         # draw character
         pressed = pygame.key.get_pressed()
