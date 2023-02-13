@@ -1,5 +1,3 @@
-#from tkinter import Menu
-
 import pygame
 import Characters
 import ButtonGeneral
@@ -22,8 +20,7 @@ pygame.display.set_caption(name)
 icon = pygame.image.load('Pictures/shield.png')
 pygame.display.set_icon(icon)
 
-
-# Pygame clock - FPS
+# Pygame clock-FPS
 clock = pygame.time.Clock()
 FPS = 30
 x = 30
@@ -57,13 +54,26 @@ while running:
 
     if menu_state == 'SecondMenu':
 
-        screen.fill((123, 16, 13))
-
-        if second_btn.draw_button(screen):
+        # draw character
+        pressed = pygame.key.get_pressed()
+        if pressed[pygame.K_UP]:
+            # pass
+            fig.move_up()
+            print(fig.pos_y)
+        elif pressed[pygame.K_DOWN]:
+            fig.move_down()
+            print(fig.pos_y)
+        elif pressed[pygame.K_LEFT]:
+            fig.move_left()
+            print(fig.pos_x)
+        elif pressed[pygame.K_RIGHT]:
+            fig.move_right()
+            print(fig.pos_x)
+        # Exit condition to menu
+        elif pressed[pygame.K_ESCAPE]:
             menu_state = 'Menu'
-
-        if quit_btn.draw_button(screen):
-            running = False
+        screen.fill((0, 0, 0))
+        fig.draw()
 
     for event in pygame.event.get():
         print(event)
@@ -71,31 +81,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # draw character
-    pressed = pygame.key.get_pressed()
-    if pressed[pygame.K_UP]:
-        # pass
-        fig.move_up()
-        print(fig.pos_y)
-    elif pressed[pygame.K_DOWN]:
-        fig.move_down()
-        print(fig.pos_y)
-    elif pressed[pygame.K_LEFT]:
-        fig.move_left()
-        print(fig.pos_x)
-    elif pressed[pygame.K_RIGHT]:
-        fig.move_right()
-        print(fig.pos_x)
-
-    screen.fill((0, 0, 0))
-    fig.draw()
-
     pygame.display.flip()
     clock.tick(FPS)
 
     # Screen update
     pygame.display.update()
-
 
 # Close of pygame window
 pygame.quit()
