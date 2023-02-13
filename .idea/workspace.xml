@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="">
+    <list default="true" id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="Working a menu with moving object">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButtonGeneral.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonGeneral.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +110,14 @@
       <option name="presentableId" value="Default" />
       <updated>1672234519291</updated>
     </task>
+    <task id="LOCAL-00001" summary="Working a menu with moving object">
+      <created>1676316403093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676316403093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,5 +160,9 @@
         <entry key="58bfb2a3-a83c-4c7e-9ade-f3c7e4bc7247" value="TOOL_WINDOW" />
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working a menu with moving object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working a menu with moving object" />
   </component>
 </project>

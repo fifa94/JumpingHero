@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 
+
 class Button(object):
 
     # Define colors
@@ -8,7 +9,7 @@ class Button(object):
     hover_color = 245, 245, 245
     click_color = 155, 155, 155
     white = 255, 255, 255
-    black = 0 , 0, 0
+    black = 0, 0, 0
     WIDTH = 140
     HEIGHT = 50
 
@@ -29,7 +30,7 @@ class Button(object):
             if pygame.mouse.get_pressed()[0] == 1:
                 self.clicked = True
                 pygame.draw.rect(screen, self.click_color, button_rect)
-            elif pygame.mouse.get_pressed()[0] == 0 and self.clicked == True:
+            elif pygame.mouse.get_pressed()[0] == 0 and self.clicked:
                 action = True
                 self.clicked = False
             else:
