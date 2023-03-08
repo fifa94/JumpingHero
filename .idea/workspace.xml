@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="Working a menu with moving object">
+    <list default="true" id="8546504e-48cd-47ea-8354-b8ec1a510e00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ButtonGeneral.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonGeneral.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
