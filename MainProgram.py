@@ -56,19 +56,25 @@ while running:
 
         # draw character
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_UP]:
+        fig.gravity()
+
+        print(fig.pos_y)
+        print(fig.vel_y)
+
+
+        if pressed[pygame.K_SPACE]:
             # pass
             fig.move_up()
             print(fig.pos_y)
-        elif pressed[pygame.K_DOWN]:
-            fig.move_down()
-            print(fig.pos_y)
-        elif pressed[pygame.K_LEFT]:
-            fig.move_left()
-            print(fig.pos_x)
-        elif pressed[pygame.K_RIGHT]:
-            fig.move_right()
-            print(fig.pos_x)
+        # elif pressed[pygame.K_DOWN]:
+        #     fig.move_down()
+        #     print(fig.pos_y)
+        # elif pressed[pygame.K_LEFT]:
+        #     fig.move_left()
+        #     print(fig.pos_x)
+        # elif pressed[pygame.K_RIGHT]:
+        #     fig.move_right()
+        #     print(fig.pos_x)
         # Exit condition to menu
         elif pressed[pygame.K_ESCAPE]:
             menu_state = 'Menu'

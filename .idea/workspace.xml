@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8546504e-48cd-47ea-8354-b8ec1a510e00" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Enviroment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -104,7 +106,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="53dd0c5b-e467-41b2-9c48-25221aae8a27" name="Changes" comment="" />
+      <changelist id="8546504e-48cd-47ea-8354-b8ec1a510e00" name="Changes" comment="" />
       <created>1672234519291</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

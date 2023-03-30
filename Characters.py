@@ -1,5 +1,5 @@
 import pygame
-
+import Enviroment
 
 class CommonCharacter:
     def __init__(self, name, pos_x, pos_y, screen):
@@ -9,6 +9,8 @@ class CommonCharacter:
         self.perk = 'none'
         self.pos_x = pos_x
         self.pos_y = pos_y
+        self.vel_x = 0
+        self.vel_y = 0
         self.screen = screen
         self.player = pygame.image.load('Pictures/rocket.png')
         self.draw()
@@ -51,16 +53,34 @@ class CommonCharacter:
         self.rotation_flag = True
         self.draw()
 
-    def move_down(self):
+    def move_down(self, velocity):
         print('move down')
-        self.pos_y += 5
+        time_step = 1
+        self.pos_y = self.pos_y + velocity * time_step
         self.draw()
+
 
     def jump(self):
         self.draw()
 
     def gravity(self):
-        pass
+        time_step = 1
+        gravity = 1
+        last_vel = self.vel_y
+        self.vel_y = self.vel_y + (gravity * time_step)
+
+        self.pos_y = self.pos_y + ((self.vel_y + last_vel) * 0.5 * time_step)
+
+        print('gravity')
+
+        g = Enviroment.Ground(450,self.screen)
+
+        k = g.border(self.pos_y, self.vel_y)
+        self.pos_y = k[0]
+        self.vel_y = k[1]
+        # time_step = 1
+        # self.pos_y = self.pos_y + (v * time_step)
+        self.draw()
 
     def increase_hitpoint(self):
         pass
