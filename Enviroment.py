@@ -1,7 +1,7 @@
 import pygame
 
-class Ground:
-    def __init__(self, ground_pos,screen):
+class Borders:
+    def __init__(self, screen, ground_pos):
         self.ground_pos = ground_pos
 
         self.screen = screen
@@ -11,7 +11,21 @@ class Ground:
 
         pass
 
-    def border(self, act_pos, act_vel):
+    def ground(self, act_pos):
         if act_pos > self.ground_pos:
+            return True
+        return False
+
+    def heaven(self, act_pos):
+        if act_pos < 0:
+            print('heaven active')
+            return True
+        return False
+
+    def border_frame(self, act_pos, act_vel):
+        if self.ground(act_pos):
             return [self.ground_pos, 0]
+        if self.heaven(act_pos):
+            print('heaven active')
+            return [0, 0]
         return [act_pos, act_vel]

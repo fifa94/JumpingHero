@@ -27,7 +27,7 @@ x = 30
 y = 30
 
 fig = Characters.CommonCharacter('aaa', 100, 100, screen)
-rocketImg = pygame.image.load('Pictures/rocket.png')
+rocketImg = pygame.image.load('Pictures/hero_01.png')
 
 play_btn = ButtonGeneral.Button(75, 200, 'Play')
 quit_btn = ButtonGeneral.Button(75, 300, 'Quit')
@@ -39,6 +39,7 @@ running = True
 back_ground = 215, 25, 25
 
 menu_state = 'Menu'
+
 
 while running:
 
@@ -56,28 +57,39 @@ while running:
 
         # draw character
         pressed = pygame.key.get_pressed()
+        keys_pressed = pygame.event.get()
         fig.gravity()
 
-        print(fig.pos_y)
-        print(fig.vel_y)
+
+        # print(fig.pos_y)
+        # print(fig.vel_y)
+
+        for event in keys_pressed:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    fig.jump()
+                    print(fig.pos_y)
 
 
         if pressed[pygame.K_SPACE]:
-            # pass
-            fig.move_up()
-            print(fig.pos_y)
+            pass
+            # k_space_edge = True
+            # fig.move_up()
+            # print(fig.pos_y)
         # elif pressed[pygame.K_DOWN]:
         #     fig.move_down()
         #     print(fig.pos_y)
-        # elif pressed[pygame.K_LEFT]:
-        #     fig.move_left()
-        #     print(fig.pos_x)
-        # elif pressed[pygame.K_RIGHT]:
-        #     fig.move_right()
-        #     print(fig.pos_x)
+        elif pressed[pygame.K_LEFT]:
+            fig.move_left()
+            print(fig.pos_x)
+        elif pressed[pygame.K_RIGHT]:
+            fig.move_right()
+            print(fig.pos_x)
         # Exit condition to menu
         elif pressed[pygame.K_ESCAPE]:
             menu_state = 'Menu'
+
+
         screen.fill((0, 0, 0))
         fig.draw()
 
