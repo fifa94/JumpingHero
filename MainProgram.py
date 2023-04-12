@@ -45,7 +45,7 @@ while running:
 
     if menu_state == 'Menu':
 
-        # Main menu with its background. Position x0,y0
+        # Main menu with its background. Position x0, y0.
         screen.blit(menu_background, (0, 0))
 
         if play_btn.draw_button(screen):
@@ -69,6 +69,9 @@ while running:
                 if event.key == pygame.K_SPACE:
                     fig.jump()
                     print(fig.pos_y)
+            # closing of the window in game
+            if event.type == pygame.QUIT:
+                running = False
 
         if pressed[pygame.K_SPACE]:
             pass
@@ -87,6 +90,8 @@ while running:
         # Exit condition to menu
         elif pressed[pygame.K_ESCAPE]:
             menu_state = 'Menu'
+        elif pressed[pygame.QUIT]:
+            running = False
 
         screen.fill((0, 0, 0))
         fig.draw()
