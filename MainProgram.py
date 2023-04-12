@@ -28,10 +28,11 @@ y = 30
 
 fig = Characters.CommonCharacter('aaa', 100, 100, screen)
 rocketImg = pygame.image.load('Pictures/hero_01.png')
+menu_background = pygame.image.load('Pictures/meadow-game-background.jpg')
 
-play_btn = ButtonGeneral.Button(75, 200, 'Play')
-quit_btn = ButtonGeneral.Button(75, 300, 'Quit')
-second_btn = ButtonGeneral.Button(75, 200, 'Main menu')
+play_btn = ButtonGeneral.Button(225, 200, 'Play')
+quit_btn = ButtonGeneral.Button(225, 300, 'Quit')
+second_btn = ButtonGeneral.Button(225, 200, 'Main menu')
 
 # Main game cycle
 running = True
@@ -40,12 +41,12 @@ back_ground = 215, 25, 25
 
 menu_state = 'Menu'
 
-
 while running:
 
     if menu_state == 'Menu':
 
-        screen.fill((123, 13, 123))
+        # Main menu with its background. Position x0,y0
+        screen.blit(menu_background, (0, 0))
 
         if play_btn.draw_button(screen):
             menu_state = 'Game'
@@ -60,7 +61,6 @@ while running:
         keys_pressed = pygame.event.get()
         fig.gravity()
 
-
         # print(fig.pos_y)
         # print(fig.vel_y)
 
@@ -69,7 +69,6 @@ while running:
                 if event.key == pygame.K_SPACE:
                     fig.jump()
                     print(fig.pos_y)
-
 
         if pressed[pygame.K_SPACE]:
             pass
@@ -88,7 +87,6 @@ while running:
         # Exit condition to menu
         elif pressed[pygame.K_ESCAPE]:
             menu_state = 'Menu'
-
 
         screen.fill((0, 0, 0))
         fig.draw()
