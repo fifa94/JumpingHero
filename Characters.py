@@ -13,7 +13,7 @@ class CommonCharacter:
         self.vel_y = 0
         self.screen = screen
         self.player = pygame.image.load('Pictures/rocket.png')
-        self.frame = Enviroment.Borders(self.screen, 450)
+        self.frame = Enviroment.Borders(self.screen, 550)
         self.draw()
 
         self.rotation_flag = True
