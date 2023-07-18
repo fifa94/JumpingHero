@@ -13,7 +13,7 @@ class CommonCharacter:
         self.vel_y = 0
         self.screen = screen
         self.player = pygame.image.load('Pictures/hero_01.png')
-        self.frame = Enviroment.Borders(self.screen, 550)
+        self.frame = Enviroment.Borders(self.screen, 540)
         self.draw()
 
         self.rotation_flag = True
@@ -107,7 +107,7 @@ class CommonCharacter:
 
     def horizontal_dynamics(self):
         pass
-    
+
     def increase_hitpoint(self):
         pass
 
@@ -126,6 +126,7 @@ class CommonCharacter:
 
     def get_name(self): return self.name
 
+    def get_actual_position(self): return [self.pos_x, self.pos_y]
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------

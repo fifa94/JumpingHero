@@ -47,7 +47,7 @@ class Obstacle:
         return [X,Y]
 
     def get_upper_border(self):
-        return self.Ypos + self.Ydim
+        return self.Ypos - self.Ydim
 
     def get_lower_border(self):
         return self.Ypos
@@ -57,8 +57,15 @@ class Obstacle:
 
         self.screen.blit(wall, (self.Xpos, self.Ypos))
 
-    def object_detection(self):
-        pass
+    def object_detection(self, act_x_pos, act_y_pos):
+        # if act_x_pos < self.Xpos + self.Xdim and act_x_pos > self.Xpos and \
+        #         act_y_pos < self.get_upper_border() and act_y_pos > self.get_lower_border():
+
+        if act_x_pos < self.Xpos + self.Xdim and act_x_pos > self.Xpos and act_y_pos > self.get_upper_border() and act_y_pos < self.get_lower_border():
+            return True
+
+
+        return False
 
     def active(self):
 

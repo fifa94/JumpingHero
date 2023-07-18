@@ -14,7 +14,7 @@ class Game:
         # enviroment objects
         self.gravity = Enviroment.Gravity(1)
         self.obst1 = Enviroment.Obstacle(screen, 100, 100, 80, 80)
-        self.ground = Enviroment.Obstacle(screen, 550, 50, 0, 550)
+        self.ground = Enviroment.Obstacle(screen, 150, 50, 0, 550)
 
         # character obejcts
         self.fig = Characters.CommonCharacter('aaa', 100, 100, screen)
@@ -32,6 +32,9 @@ class Game:
 
         self.obst1.active()
         self.ground.active()
+
+        fig_act_pos = self.fig.get_actual_position()
+        print(str(self.ground.object_detection(fig_act_pos[0], fig_act_pos[1])) + ' x = ' + str(fig_act_pos[0]) + ' y = ' + str(fig_act_pos[1]))
 
         # user control logic
         self.user_control()
