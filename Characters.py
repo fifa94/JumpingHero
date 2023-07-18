@@ -37,6 +37,9 @@ class CommonCharacter:
         # if self.rotation_flag:
         #     self.player = pygame.transform.rotate(self.player, 45)
         #     self.rotation_flag = False
+        k = self.frame.border_frame(self.pos_y, self.vel_y, self.pos_x)
+        self.pos_x = k[2]
+
 
         self.draw()
 
@@ -46,6 +49,8 @@ class CommonCharacter:
         # if self.rotation_flag:
         #     self.player = pygame.transform.rotate(self.player, 135)
         #     self.rotation_flag = False
+        k = self.frame.border_frame(self.pos_y, self.vel_y, self.pos_x)
+        self.pos_x = k[2]
         self.draw()
 
     def move_up(self):
@@ -65,7 +70,7 @@ class CommonCharacter:
     def jump(self):
         self.dynamics(-15)
         # k = self.frame.heaven(self.pos_y, self.vel_y)
-        k = self.frame.border_frame(self.pos_y, self.vel_y)
+        k = self.frame.border_frame(self.pos_y, self.vel_y, self.pos_x)
         self.pos_y = k[0]
         self.vel_y = k[1]
         print('jump')
@@ -81,7 +86,7 @@ class CommonCharacter:
         self.dynamics(1)
 
         # k = self.frame.ground(self.pos_y, self.vel_y)
-        k = self.frame.border_frame(self.pos_y, self.vel_y)
+        k = self.frame.border_frame(self.pos_y, self.vel_y, self.pos_x)
 
         self.pos_y = k[0]
         self.vel_y = k[1]
@@ -100,6 +105,8 @@ class CommonCharacter:
     def frame_borders(self, act_pos, act_vel):
         l = self.frame.ground(act_pos)
         k = self.frame.heaven(act_pos)
+
+        #k = self.frame.border_frame(self.pos_y, self.vel_y, self.pos_x)
         return [k[0], k[1]]
 
     def increase_hitpoint(self):

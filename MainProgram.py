@@ -56,7 +56,7 @@ while running:
             running = False
 
     if menu_state == 'Game':
-        
+
         # Load image to game scree background
         screen.blit(game_background, (0, 0))
         # draw character
@@ -78,12 +78,7 @@ while running:
 
         if pressed[pygame.K_SPACE]:
             pass
-            # k_space_edge = True
-            # fig.move_up()
-            # print(fig.pos_y)
-        # elif pressed[pygame.K_DOWN]:
-        #     fig.move_down()
-        #     print(fig.pos_y)
+
         elif pressed[pygame.K_LEFT]:
             fig.move_left()
             print(fig.pos_x)
