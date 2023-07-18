@@ -53,9 +53,12 @@ class Obstacle:
         return self.Ypos
 
     def draw(self):
-        wall = pygame.image.load('Pictures/rocket.png')
+        # wall = pygame.image.load('Pictures/rocket.png')
+        # wall = pygame.Rect(self.Xpos, self.Ypos, self.Xdim, self.Ydim)
 
-        self.screen.blit(wall, (self.Xpos, self.Ypos))
+        wall = pygame.Surface((self.Xdim, self.Ydim))
+        wall.fill([92, 64, 51])
+        self.screen.blit(wall, (self.Xpos, self.Ypos + self.Ydim))
 
     def object_detection(self, act_x_pos, act_y_pos):
         # if act_x_pos < self.Xpos + self.Xdim and act_x_pos > self.Xpos and \
@@ -75,6 +78,9 @@ class Obstacle:
 class Gravity:
     def __init__(self, value):
         self.gravity_value = value
+
+    def get_gravity(self):
+        return self.gravity_value
 
 
 class Background:

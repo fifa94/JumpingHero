@@ -27,10 +27,10 @@ FPS = 30
 x = 30
 y = 30
 
-# fig = Characters.CommonCharacter('aaa', 100, 100, screen)
-# rocketImg = pygame.image.load('Pictures/hero_01.png')
+
 menu_background = pygame.image.load('Pictures/meadow-game-background.jpg')
 game_background = pygame.image.load('Pictures/meadow-game-background.jpg')
+
 
 play_btn = ButtonGeneral.Button(225, 200, 'Play')
 quit_btn = ButtonGeneral.Button(225, 300, 'Quit')
