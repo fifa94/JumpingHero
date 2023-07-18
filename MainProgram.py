@@ -29,6 +29,7 @@ y = 30
 fig = Characters.CommonCharacter('aaa', 100, 100, screen)
 rocketImg = pygame.image.load('Pictures/hero_01.png')
 menu_background = pygame.image.load('Pictures/meadow-game-background.jpg')
+game_background = pygame.image.load('Pictures/meadow-game-background.jpg')
 
 play_btn = ButtonGeneral.Button(225, 200, 'Play')
 quit_btn = ButtonGeneral.Button(225, 300, 'Quit')
@@ -55,7 +56,9 @@ while running:
             running = False
 
     if menu_state == 'Game':
-
+        
+        # Load image to game scree background
+        screen.blit(game_background, (0, 0))
         # draw character
         pressed = pygame.key.get_pressed()
         keys_pressed = pygame.event.get()
@@ -93,7 +96,6 @@ while running:
         elif pressed[pygame.QUIT]:
             running = False
 
-        screen.fill((0, 0, 0))
         fig.draw()
 
     for event in pygame.event.get():
