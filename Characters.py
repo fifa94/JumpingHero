@@ -12,7 +12,7 @@ class CommonCharacter:
         self.vel_x = 0
         self.vel_y = 0
         self.screen = screen
-        self.player = pygame.image.load('Pictures/rocket.png')
+        self.player = pygame.image.load('Pictures/hero_01.png')
         self.frame = Enviroment.Borders(self.screen, 550)
         self.draw()
 
@@ -102,6 +102,12 @@ class CommonCharacter:
         k = self.frame.heaven(act_pos)
         return [k[0], k[1]]
 
+    def vertical_dynamics(self):
+        pass
+
+    def horizontal_dynamics(self):
+        pass
+    
     def increase_hitpoint(self):
         pass
 

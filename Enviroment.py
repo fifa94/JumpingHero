@@ -1,5 +1,6 @@
 import pygame
 
+
 class Borders:
     def __init__(self, screen, ground_pos):
         self.ground_pos = ground_pos
@@ -29,3 +30,46 @@ class Borders:
             print('heaven active')
             return [0, 0]
         return [act_pos, act_vel]
+
+
+class Obstacle:
+    def __init__(self, screen, Xdim, Ydim, Xpos, Ypos):
+        self.screen = screen
+        self.Xdim = Xdim
+        self.Ydim = Ydim
+        self.Xpos = Xpos
+        self.Ypos = Ypos
+
+    def get_dimensions(self):
+        X = [self.Xpos, self.Xpos + self.Xdim, self.Xpos + self.Xdim, self.Xpos]
+        Y = [self.Ypos, self.Ypos, self.Ypos + self.Ydim, self.Ypos + self.Ydim]
+
+        return [X,Y]
+
+    def get_upper_border(self):
+        return self.Ypos + self.Ydim
+
+    def get_lower_border(self):
+        return self.Ypos
+
+    def draw(self):
+        wall = pygame.image.load('Pictures/rocket.png')
+
+        self.screen.blit(wall, (self.Xpos, self.Ypos))
+
+    def object_detection(self):
+        pass
+
+    def active(self):
+
+
+        self.draw()
+
+class Gravity:
+    def __init__(self, value):
+        self.gravity_value = value
+
+
+class Background:
+    def __init__(self):
+        pass
