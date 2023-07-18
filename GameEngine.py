@@ -13,9 +13,10 @@ class Game:
 
         # enviroment objects
         self.gravity = Enviroment.Gravity(1)
-        self.obst1 = Enviroment.Obstacle(screen, 150, 35, 200, 200)
-        self.obst2 = Enviroment.Obstacle(screen, 150, 35, 400, 400)
-        self.ground = Enviroment.Obstacle(screen, 600, 30, 0, 550)
+        self.obst1 = Enviroment.Obstacle(screen, 150, 100, 0, 470)
+        self.obst2 = Enviroment.Obstacle(screen, 150, 100, 400, 470)
+        self.obst3 = Enviroment.Obstacle(screen, 100, 30, 300, 300)
+        self.ground = Enviroment.Obstacle(screen, 600, 300, 0, 570)
 
         # character obejcts
         self.fig = Characters.CommonCharacter('aaa', 100, 100, screen)
@@ -52,6 +53,7 @@ class Game:
 
         self.obst1.active()
         self.obst2.active()
+        self.obst3.active()
         self.ground.active()
         self.fig.draw()
 
@@ -63,11 +65,18 @@ class Game:
         pressed = pygame.key.get_pressed()
         keys_pressed = pygame.event.get()
 
+        p = self.fig.get_actual_position()
+        d = self.fig.get_dimensions()
 
+        enable_jump = True
+        # enable_jump = self.ground.object_detection(p, d) or self.obst1.object_detection(p, d) or self.obst2.object_detection(p, d) \
+        #               or self.obst3.object_detection(p, d)
+
+        print('enable jump ' + str(enable_jump))
         for event in keys_pressed:
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
-                    self.fig.jump()
+                if event.key == pygame.K_SPACE and enable_jump:
+                    self.fig.vertical_dynamics(-15)    # jump
                     print(self.fig.pos_y)
             # closing of the window in game
             if event.type == pygame.QUIT:
@@ -83,29 +92,69 @@ class Game:
             print(self.fig.pos_x)
 
     def object_colisions(self):
+        # fig_act_pos = self.fig.get_actual_position()
+        # fig_dim = self.fig.get_dimensions()
+        #
+        # if self.ground.object_detection(fig_act_pos, fig_dim):
+        #     match detection_mechanism(self.ground, fig_act_pos[1]):
+        #         case 0:
+        #             self.fig.set_y_position(self.ground.get_upper_border())
+        #         case 1:
+        #             self.fig.set_y_position(self.ground.get_lower_border())
+        #     self.fig.set_y_velocity(0)
+        #
+        # if self.obst1.object_detection(fig_act_pos, fig_dim):
+        #     match detection_mechanism(self.obst1, fig_act_pos[1]):
+        #         case 0:
+        #             self.fig.set_y_position(self.obst1.get_upper_border())
+        #         case 1:
+        #             self.fig.set_y_position(self.obst1.get_lower_border() + fig_dim[1])
+        #     self.fig.set_y_velocity(0)
+
+        self.detection_in_Y(self.ground)
+
+        self.detection_in_Y(self.obst1)
+        # self.detection_in_x(self.obst1)
+
+        self.detection_in_Y(self.obst2)
+        self.detection_in_Y(self.obst3)
+
+
+    def detection_in_Y(self, obstacle):
         fig_act_pos = self.fig.get_actual_position()
+        fig_dim = self.fig.get_dimensions()
 
-        if self.ground.object_detection(fig_act_pos[0], fig_act_pos[1]):
-            self.fig.set_y_position(self.ground.get_upper_border())
+        if obstacle.object_detection(fig_act_pos, fig_dim):
+
+            diff = [abs(obstacle.get_upper_border() - fig_act_pos[1]),
+                    abs(obstacle.get_lower_border() - fig_act_pos[1]),
+                    abs(obstacle.get_left_border() - fig_act_pos[0]),
+                    abs(obstacle.get_right_border() - fig_act_pos[0])
+                    ]
+
+            match diff.index(min(diff)):
+                case 0:
+                    self.fig.set_y_position(obstacle.get_upper_border())
+                case 1:
+                    self.fig.set_y_position(obstacle.get_lower_border() + fig_dim[1])
+                case 2:
+                    self.fig.set_x_position(obstacle.get_left_border())
+                case 3:
+                    self.fig.set_x_position(obstacle.get_right_border())
             self.fig.set_y_velocity(0)
 
-        if self.obst1.object_detection(fig_act_pos[0], fig_act_pos[1]):
-            a1 = abs(self.obst1.get_upper_border() - fig_act_pos[1])
-            a2 = abs(self.obst1.get_lower_border() - fig_act_pos[1])
-            print(self.obst1.get_upper_border())
-            print(self.obst1.get_lower_border())
-            A = [a1, a2]
-            index = A.index(min(A))
-            print(A)
-            print(index)
+    def detection_in_x(self, obstacle):
+        fig_act_pos = self.fig.get_actual_position()
+        fig_dim = self.fig.get_dimensions()
 
-            if index == 0:
-                self.fig.set_y_position(self.obst1.get_upper_border())
-            elif index == 1:
-                self.fig.set_y_position(self.obst1.get_lower_border())
+        if obstacle.object_detection(fig_act_pos, fig_dim):
+
+            diff = [abs(obstacle.get_left_border() - fig_act_pos[0]),
+                    abs(obstacle.get_right_border() - fig_act_pos[0])]
+
+            match diff.index(min(diff)):
+                case 0:
+                    self.fig.set_x_position(obstacle.get_left_border())
+                case 1:
+                    self.fig.set_x_position(obstacle.get_right_border() + fig_dim[1])
             self.fig.set_y_velocity(0)
-
-        if self.obst2.object_detection(fig_act_pos[0], fig_act_pos[1]):
-            self.fig.set_y_position(self.obst2.get_upper_border())
-            self.fig.set_y_velocity(0)
-

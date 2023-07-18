@@ -52,8 +52,9 @@ while running:
 
         # Main menu with its background. Position x0, y0.
         screen.blit(menu_background, (0, 0))
+        pressed = pygame.key.get_pressed()
 
-        if play_btn.draw_button(screen):
+        if play_btn.draw_button(screen) or pressed[pygame.K_SPACE]:
             menu_state = 'Game'
 
         if quit_btn.draw_button(screen):

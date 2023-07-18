@@ -14,8 +14,10 @@ class CommonCharacter:
         self.screen = screen
         self.player = pygame.image.load('Pictures/hero_01.png')
         self.frame = Enviroment.Borders(self.screen, 540)
-        self.draw()
+        # self.draw()
 
+        self.height = 58
+        self.width = 70
         self.rotation_flag = True
 
     def __str__(self):
@@ -28,38 +30,21 @@ class CommonCharacter:
         return output_text
 
     def draw(self):
-
-        self.screen.blit(self.player, (self.pos_x, self.pos_y))
-
-
+        print('x = ' + str(self.pos_x) + ', y = ' + str(self.pos_y))
+        self.screen.blit(self.player, (self.pos_x, self.pos_y - self.height))
 
     def jump(self):
         self.dynamics(-15)
-        # k = self.frame.heaven(self.pos_y, self.vel_y)
-        # k = self.frame.border_frame(self.pos_y, self.vel_y)
-        # self.pos_y = k[0]
-        # self.vel_y = k[1]
         print('jump')
-        self.draw()
 
-
-
-    def dynamics(self,acceleration):
+    def dynamics(self, acceleration):
         time_step = 1
         last_vel = self.vel_y
         self.vel_y = self.vel_y + (acceleration * time_step)
         self.pos_y = self.pos_y + ((self.vel_y + last_vel) * 0.5 * time_step)
-
-    def frame_borders(self, act_pos, act_vel):
-        l = self.frame.ground(act_pos)
-        k = self.frame.heaven(act_pos)
-        return [k[0], k[1]]
 
     def vertical_dynamics(self, acceleration):
-        time_step = 1
-        last_vel = self.vel_y
-        self.vel_y = self.vel_y + (acceleration * time_step)
-        self.pos_y = self.pos_y + ((self.vel_y + last_vel) * 0.5 * time_step)
+        self.dynamics(acceleration)
 
     def horizontal_dynamics(self, step):
         self.pos_x += step
@@ -91,6 +76,8 @@ class CommonCharacter:
     def get_name(self): return self.name
 
     def get_actual_position(self): return [self.pos_x + 20, self.pos_y]
+
+    def get_dimensions(self): return [self.width, self.height]
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
