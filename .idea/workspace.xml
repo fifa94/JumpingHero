@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="8546504e-48cd-47ea-8354-b8ec1a510e00" name="Changes" comment="Working a menu with moving object">
       <change beforePath="$PROJECT_DIR$/.idea/JumpingH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JumpingH.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainProgram.py" afterDir="false" />
+=======
+    <list default="true" id="8546504e-48cd-47ea-8354-b8ec1a510e00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +39,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/GitHub/JumpingHero"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sramekf\PycharmProjects\JumpingH" />
@@ -74,7 +81,11 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
+<<<<<<< Updated upstream
       <option name="SDK_HOME" value="C:\Program Files\Python311\python.exe" />
+=======
+      <option name="SDK_HOME" value="C:\Users\houfekp\AppData\Local\Programs\Python\Python311\python.exe" />
+>>>>>>> Stashed changes
       <option name="SDK_NAME" value="Python 3.11" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
