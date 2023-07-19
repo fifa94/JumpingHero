@@ -4,19 +4,18 @@ import Enviroment
 class CommonCharacter:
     def __init__(self, name, pos_x, pos_y, screen):
         self.name = name
-        self.hp = 100
-        self.stamina = 100
-        self.perk = 'none'
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.vel_x = 0
         self.vel_y = 0
         self.screen = screen
-        self.player = pygame.image.load('Pictures/rocket.png')
-        self.frame = Enviroment.Borders(self.screen, 550)
-        self.draw()
+        self.player = pygame.image.load('Pictures/hero_01.png')
+        self.frame = Enviroment.Borders(self.screen, 540)
+        # self.draw()
 
-        self.rotation_flag = True
+        self.height = 58
+        self.width = 70
+
 
     def __str__(self):
         new_line = '\n'
@@ -28,98 +27,38 @@ class CommonCharacter:
         return output_text
 
     def draw(self):
-
-        self.screen.blit(self.player, (self.pos_x, self.pos_y))
-
-    def move_right(self):
-        print('move right')
-        self.pos_x += 5
-        # if self.rotation_flag:
-        #     self.player = pygame.transform.rotate(self.player, 45)
-        #     self.rotation_flag = False
-
-        self.draw()
-
-    def move_left(self):
-        print('move left')
-        self.pos_x -= 5
-        # if self.rotation_flag:
-        #     self.player = pygame.transform.rotate(self.player, 135)
-        #     self.rotation_flag = False
-        self.draw()
-
-    def move_up(self):
-        print('move up')
-        self.pos_y -= 5
-
-        # self.rotation_flag = True
-        self.draw()
-
-    def move_down(self, velocity):
-        print('move down')
-        time_step = 1
-        self.pos_y = self.pos_y + velocity * time_step
-        self.draw()
-
+        print('x = ' + str(self.pos_x) + ', y = ' + str(self.pos_y))
+        self.screen.blit(self.player, (self.pos_x, self.pos_y - self.height))
 
     def jump(self):
         self.dynamics(-15)
-        # k = self.frame.heaven(self.pos_y, self.vel_y)
-        k = self.frame.border_frame(self.pos_y, self.vel_y)
-        self.pos_y = k[0]
-        self.vel_y = k[1]
         print('jump')
-        self.draw()
 
-    def gravity(self):
-        # time_step = 1
-        # gravity = 1
-        # last_vel = self.vel_y
-        # self.vel_y = self.vel_y + (gravity * time_step)
-        #
-        # self.pos_y = self.pos_y + ((self.vel_y + last_vel) * 0.5 * time_step)
-        self.dynamics(1)
-
-        # k = self.frame.ground(self.pos_y, self.vel_y)
-        k = self.frame.border_frame(self.pos_y, self.vel_y)
-
-        self.pos_y = k[0]
-        self.vel_y = k[1]
-
-        # print('gravity')
-        # time_step = 1
-        # self.pos_y = self.pos_y + (v * time_step)
-        self.draw()
-
-    def dynamics(self,acceleration):
+    def dynamics(self, acceleration):
         time_step = 1
         last_vel = self.vel_y
         self.vel_y = self.vel_y + (acceleration * time_step)
         self.pos_y = self.pos_y + ((self.vel_y + last_vel) * 0.5 * time_step)
 
-    def frame_borders(self, act_pos, act_vel):
-        l = self.frame.ground(act_pos)
-        k = self.frame.heaven(act_pos)
-        return [k[0], k[1]]
+    def vertical_dynamics(self, acceleration):
+        self.dynamics(acceleration)
 
-    def increase_hitpoint(self):
-        pass
+    def horizontal_dynamics(self, step):
+        self.pos_x += step
 
-    def decrease_hitpoint(self):
-        pass
+    def set_x_position(self, x_new): self.pos_x = x_new
 
-    def increase_stamina(self):
-        pass
+    def set_y_position(self, y_new): self.pos_y = y_new
 
-    def decrease_stamina(self):
-        pass
+    def set_x_velocity(self, x_vel_new): self.vel_x = x_vel_new
 
-    def get_hp(self): return self.hp
-
-    def get_stamina(self): return self.stamina
+    def set_y_velocity(self, y_vel_new): self.vel_y = y_vel_new
 
     def get_name(self): return self.name
 
+    def get_actual_position(self): return [self.pos_x + 20, self.pos_y]
+
+    def get_dimensions(self): return [self.width, self.height]
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
