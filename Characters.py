@@ -4,9 +4,6 @@ import Enviroment
 class CommonCharacter:
     def __init__(self, name, pos_x, pos_y, screen):
         self.name = name
-        self.hp = 100
-        self.stamina = 100
-        self.perk = 'none'
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.vel_x = 0
@@ -18,7 +15,7 @@ class CommonCharacter:
 
         self.height = 58
         self.width = 70
-        self.rotation_flag = True
+
 
     def __str__(self):
         new_line = '\n'
@@ -56,22 +53,6 @@ class CommonCharacter:
     def set_x_velocity(self, x_vel_new): self.vel_x = x_vel_new
 
     def set_y_velocity(self, y_vel_new): self.vel_y = y_vel_new
-
-    def increase_hitpoint(self):
-        pass
-
-    def decrease_hitpoint(self):
-        pass
-
-    def increase_stamina(self):
-        pass
-
-    def decrease_stamina(self):
-        pass
-
-    def get_hp(self): return self.hp
-
-    def get_stamina(self): return self.stamina
 
     def get_name(self): return self.name
 

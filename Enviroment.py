@@ -86,9 +86,8 @@ class Obstacle:
         if x_pos < self.Xpos + self.Xdim and x_pos > self.Xpos:
             return True
         return False
+    
     def active(self):
-
-
         self.draw()
 
 class Gravity:
