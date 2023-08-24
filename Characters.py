@@ -27,12 +27,12 @@ class CommonCharacter:
         return output_text
 
     def draw(self):
-        print('x = ' + str(self.pos_x) + ', y = ' + str(self.pos_y))
+        # print('x = ' + str(self.pos_x) + ', y = ' + str(self.pos_y))
         self.screen.blit(self.player, (self.pos_x, self.pos_y - self.height))
 
     def jump(self):
         self.dynamics(-15)
-        print('jump')
+        # print('jump')
 
     def dynamics(self, acceleration):
         time_step = 1

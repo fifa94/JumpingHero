@@ -54,7 +54,7 @@ class Obstacle:
         self.Xpos = Xpos
         self.Ypos = Ypos
 
-    def get_dimensions(self):
+    def get_edges(self):
         X = [self.Xpos, self.Xpos + self.Xdim, self.Xpos + self.Xdim, self.Xpos]
         Y = [self.Ypos, self.Ypos, self.Ypos + self.Ydim, self.Ypos + self.Ydim]
 
@@ -81,14 +81,9 @@ class Obstacle:
         self.screen.blit(wall, (self.Xpos, self.Ypos))
 
     def object_detection(self, obj_positions, obj_dimensions):
-        # if act_x_pos < self.Xpos + self.Xdim and act_x_pos > self.Xpos and \
-        #         act_y_pos < self.get_upper_border() and act_y_pos > self.get_lower_border():
-
         if self.right_left_border_check(obj_positions[0], obj_dimensions[0]) and self.up_low_border_check(obj_positions[1], obj_dimensions[1]):
             print('obj_detected')
             return True
-
-
         return False
 
     def up_low_border_check(self, y_pos, y_size):
@@ -97,7 +92,7 @@ class Obstacle:
         return False
 
     def right_left_border_check(self, x_pos, x_size):
-        if x_pos < self.Xpos + self.Xdim and x_pos > self.Xpos:
+        if self.Xpos + self.Xdim > x_pos > self.Xpos:
             return True
         return False
     
